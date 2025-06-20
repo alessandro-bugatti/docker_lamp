@@ -37,10 +37,10 @@ Questo progetto configura un ambiente di sviluppo completo LAMP (Linux, Apache, 
 
 | Servizio | URL | Descrizione |
 |----------|-----|-------------|
-| **Sito Web** | http://localhost | Pagina principale |
+| **Sito Web** | http://localhost:9080 | Pagina principale |
 | **PHP Test** | http://localhost/index.php | Test dello stack |
 | **phpMyAdmin** | http://localhost:8080 | Gestione database |
-| **HTTPS** | https://localhost | Versione sicura (certificato self-signed) |
+| **HTTPS** | https://localhost:9443 | Versione sicura (certificato self-signed) |
 
 ## 🗄️ Credenziali Database
 
