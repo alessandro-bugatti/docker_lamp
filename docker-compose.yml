@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  # Servizio Apache + PHP
+  web:
+    build:
+      context: ./apache-php
+      dockerfile: Dockerfile
+    container_name: lamp_web
+    ports:
+      - "9080:80"
+      - "9443:443"
+    volumes:
+      - ./www:/var/www/html
+      - ./apache-config:/etc/apache2/sites-available
+    networks:
+      - lamp_network
+    depends_on:
+      - database
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+
+  # Servizio MariaDB
+  database:
+    image: mariadb:10.11
+    container_name: lamp_db
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d
+    networks:
+      - lamp_network
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: lamp_db
+      MYSQL_USER: lamp_user
+      MYSQL_PASSWORD: lamp_password
+
+  # Servizio phpMyAdmin (opzionale per gestire il database)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: lamp_phpmyadmin
+    ports:
+      - "8080:80"
+    networks:
+      - lamp_network
+    depends_on:
+      - database
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+      PMA_USER: lamp_user
+      PMA_PASSWORD: lamp_password
+
+# Definizione della rete personalizzata
+networks:
+  lamp_network:
+    driver: bridge
+    
+
+# Volumi persistenti
+volumes:
+  db_data:
+    driver: local
