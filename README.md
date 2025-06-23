@@ -15,6 +15,10 @@ Questo progetto configura un ambiente di sviluppo completo LAMP (Linux, Apache, 
 - Docker Desktop installato e in esecuzione
 - Docker Compose
 
+Se Docker non fosse ancora installato andare al sito [www.docker.com](https://www.docker.com/) e scaricare la versione di Docker Desktop per il proprio sistema operativo, contiene anche Docker Compose.
+
+**Attenzione**: l'installazione di Docker Desktop con alcune configurazioni di Windows, in particolare Windows 11 Pro, potrebbe creare problemi ([Docker Installer stuck on Verifyng Packages](https://github.com/docker/for-win/issues/13958)). La soluzione testata è quella di disabilitare la "Protezione dell'autorità di protezione locale" in Isolamento Core. Si consiglia inoltre di installare Docker Desktop con un profilo amministrativo.
+
 ## 🚀 Avvio Rapido
 
 1. **Clona o scarica questo progetto**
