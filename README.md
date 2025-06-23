@@ -41,12 +41,12 @@ Se Docker non fosse ancora installato andare al sito [www.docker.com](https://ww
 
 ## 🌐 Accesso ai Servizi
 
-| Servizio | URL | Descrizione |
-|----------|-----|-------------|
-| **Sito Web** | http://localhost:9080 | Pagina principale |
-| **PHP Test** | http://localhost/index.php | Test dello stack |
-| **phpMyAdmin** | http://localhost:8080 | Gestione database |
-| **HTTPS** | https://localhost:9443 | Versione sicura (certificato self-signed) |
+| Servizio | URL                                | Descrizione |
+|----------|------------------------------------|-------------|
+| **Sito Web** | http://localhost:9080/welcome.html | Pagina principale |
+| **PHP Test** | http://localhost:9080              | Test dello stack |
+| **phpMyAdmin** | http://localhost:8080              | Gestione database |
+| **HTTPS** | https://localhost:9443             | Versione sicura (certificato self-signed) |
 
 ## 🗄️ Credenziali Database
 
