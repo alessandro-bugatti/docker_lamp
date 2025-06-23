@@ -178,7 +178,7 @@ Modifica in `docker-compose.yml` se necessario.
 docker-compose logs
 
 # Verifica che le porte non siano occupate
-netstat -an | findstr :80
+netstat -an | findstr :9080
 netstat -an | findstr :3306
 ```
 
