@@ -150,7 +150,7 @@ docker volume ls
 
 ### Database
 - Gli script SQL nella cartella `db-init/` vengono eseguiti automaticamente
-- I dati sono persistenti nel volume `db_data`
+- I dati sono persistenti nel volume ` docker_lamp_db_data`
 
 ## 🔧 Personalizzazione
 
