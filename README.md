@@ -23,8 +23,10 @@ Se Docker non fosse ancora installato andare al sito [www.docker.com](https://ww
 
 1. **Clona o scarica questo progetto**
 2. **Naviga nella cartella del progetto:**
+
+   supponendo che la cartella sia stata scaricata sul desktop, apri un terminale sul desktop ed esegui il comando
    ```powershell
-   cd d:\Projects\docker-for-school
+   cd docker_lamp
    ```
 
 3. **Avvia tutti i servizi:**
