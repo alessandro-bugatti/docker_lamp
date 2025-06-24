@@ -15,12 +15,18 @@ Questo progetto configura un ambiente di sviluppo completo LAMP (Linux, Apache, 
 - Docker Desktop installato e in esecuzione
 - Docker Compose
 
+Se Docker non fosse ancora installato andare al sito [www.docker.com](https://www.docker.com/) e scaricare la versione di Docker Desktop per il proprio sistema operativo, contiene anche Docker Compose.
+
+**Attenzione**: l'installazione di Docker Desktop con alcune configurazioni di Windows, in particolare Windows 11 Pro, potrebbe creare problemi ([Docker Installer stuck on Verifyng Packages](https://github.com/docker/for-win/issues/13958)). La soluzione testata è quella di disabilitare la "Protezione dell'autorità di protezione locale" in Isolamento Core. Si consiglia inoltre di installare Docker Desktop con un profilo amministrativo.
+
 ## 🚀 Avvio Rapido
 
 1. **Clona o scarica questo progetto**
 2. **Naviga nella cartella del progetto:**
+
+   supponendo che la cartella sia stata scaricata sul desktop, apri un terminale sul desktop ed esegui il comando
    ```powershell
-   cd d:\Projects\docker-for-school
+   cd docker_lamp
    ```
 
 3. **Avvia tutti i servizi:**
@@ -35,12 +41,12 @@ Questo progetto configura un ambiente di sviluppo completo LAMP (Linux, Apache, 
 
 ## 🌐 Accesso ai Servizi
 
-| Servizio | URL | Descrizione |
-|----------|-----|-------------|
-| **Sito Web** | http://localhost:9080 | Pagina principale |
-| **PHP Test** | http://localhost/index.php | Test dello stack |
-| **phpMyAdmin** | http://localhost:8080 | Gestione database |
-| **HTTPS** | https://localhost:9443 | Versione sicura (certificato self-signed) |
+| Servizio | URL                                | Descrizione |
+|----------|------------------------------------|-------------|
+| **Sito Web** | http://localhost:9080/welcome.html | Pagina principale |
+| **PHP Test** | http://localhost:9080              | Test dello stack |
+| **phpMyAdmin** | http://localhost:8080              | Gestione database |
+| **HTTPS** | https://localhost:9443             | Versione sicura (certificato self-signed) |
 
 ## 🗄️ Credenziali Database
 
@@ -144,7 +150,7 @@ docker volume ls
 
 ### Database
 - Gli script SQL nella cartella `db-init/` vengono eseguiti automaticamente
-- I dati sono persistenti nel volume `db_data`
+- I dati sono persistenti nel volume ` docker_lamp_db_data`
 
 ## 🔧 Personalizzazione
 
@@ -172,7 +178,7 @@ Modifica in `docker-compose.yml` se necessario.
 docker-compose logs
 
 # Verifica che le porte non siano occupate
-netstat -an | findstr :80
+netstat -an | findstr :9080
 netstat -an | findstr :3306
 ```
 
