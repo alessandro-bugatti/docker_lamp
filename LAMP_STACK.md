@@ -74,6 +74,8 @@ git config --global http.proxy http://proxy-host:proxy-port
 git config --global https.proxy https://proxy-host:proxy-port
 ```
 
+- IMPORTANTE: Solo una sessione di docker desktop deve essere attiva, altrimenti si ottengono errori
+
 ## 🌐 Accessi Web
 
 | Servizio | URL | Credenziali | Descrizione |
