@@ -19,6 +19,10 @@ Se Docker non fosse ancora installato andare al sito [www.docker.com](https://ww
 
 **Attenzione**: l'installazione di Docker Desktop con alcune configurazioni di Windows, in particolare Windows 11 Pro, potrebbe creare problemi ([Docker Installer stuck on Verifyng Packages](https://github.com/docker/for-win/issues/13958)). La soluzione testata è quella di disabilitare la "Protezione dell'autorità di protezione locale" in Isolamento Core. Si consiglia inoltre di installare Docker Desktop con un profilo amministrativo.
 
+## 🌐 Configurazione Proxy (Opzionale)
+
+Se ti trovi in un ambiente aziendale con un proxy, potresti dover configurare le impostazioni proxy per permettere ai comandi `apt-get` di funzionare correttamente. Consulta il file [PROXY_SETUP.md](PROXY_SETUP.md) per istruzioni dettagliate.
+
 ## 🚀 Avvio Rapido
 
 1. **Clona o scarica questo progetto**

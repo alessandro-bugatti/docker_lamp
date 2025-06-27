@@ -43,22 +43,26 @@ docker-for-school/
 
 ```powershell
 # Avvio di tutti i servizi
-docker-compose up -d
+docker compose up 
 
 # Controllo stato servizi
-docker-compose ps
+docker compose ps
 
 # Visualizzazione log
-docker-compose logs web
-docker-compose logs database
+docker compose logs web
+docker compose logs database
 
 # Arresto servizi
-docker-compose down
+docker compose down
 
 # Ricostruzione immagine (dopo modifiche)
 docker build -t docker-for-school-web ./apache-php
-docker-compose up -d --force-recreate
+docker compose up -d --force-recreate
 ```
+
+## NOTE PER IL PRIMO AVVIO
+
+Potrebbe capitare che al primo avvio su Windows si apra una finestra di richiesta di condivisione di una cartella del progetto in docker, rispondere affermativamente. Successivamente il comando docker fallisce, tuttavia basta ridare docker compose up per riavviare tutto con `docker compose up`. Potrebbe succedere due o tre volte, ma basta riavviare il processo e una volta avviato lo lo stack non verrà più fatta la domanda
 
 ## 🌐 Accessi Web
 

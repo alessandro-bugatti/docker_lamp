@@ -1,7 +1,17 @@
 FROM php:8.2-apache
 
+# Argomenti opzionali per il proxy
+ARG PROXY_HOST
+ARG PROXY_PORT
+
 # Installa le estensioni PHP necessarie per MariaDB/MySQL
 RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# Configura il proxy se fornito
+RUN if [ -n "$PROXY_HOST" ] && [ -n "$PROXY_PORT" ]; then \
+        echo "Acquire::http::Proxy \"http://$PROXY_HOST:$PROXY_PORT\";" > /etc/apt/apt.conf.d/proxy.conf && \
+        echo "Acquire::https::Proxy \"http://$PROXY_HOST:$PROXY_PORT\";" >> /etc/apt/apt.conf.d/proxy.conf; \
+    fi
 
 # Installa pacchetti aggiuntivi utili
 RUN apt-get update && apt-get install -y \
