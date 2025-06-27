@@ -62,7 +62,17 @@ docker compose up -d --force-recreate
 
 ## NOTE PER IL PRIMO AVVIO
 
-Potrebbe capitare che al primo avvio su Windows si apra una finestra di richiesta di condivisione di una cartella del progetto in docker, rispondere affermativamente. Successivamente il comando docker fallisce, tuttavia basta ridare docker compose up per riavviare tutto con `docker compose up`. Potrebbe succedere due o tre volte, ma basta riavviare il processo e una volta avviato lo lo stack non verrà più fatta la domanda
+- Potrebbe capitare che al primo avvio su Windows si apra una finestra di richiesta di condivisione di una cartella del progetto in docker, rispondere affermativamente. Successivamente il comando docker fallisce, tuttavia basta ridare docker compose up per riavviare tutto con `docker compose up`. Potrebbe succedere due o tre volte, ma basta riavviare il processo e una volta avviato lo lo stack non verrà più fatta la domanda
+
+- E' necessario impostare il proxy per git usando i comandi 
+
+```
+# Per proxy HTTP
+git config --global http.proxy http://proxy-host:proxy-port
+
+# Per proxy HTTPS  
+git config --global https.proxy https://proxy-host:proxy-port
+```
 
 ## 🌐 Accessi Web
 
