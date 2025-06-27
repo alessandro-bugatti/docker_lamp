@@ -57,6 +57,13 @@ services:
       PMA_USER: lamp_user
       PMA_PASSWORD: lamp_password
 
+  mailcatcher:
+    restart: on-failure
+    image: haravich/fake-smtp-server
+    ports:
+    - "1080:1080"
+    - "1025:1025"
+
 # Definizione della rete personalizzata
 networks:
   lamp_network:
